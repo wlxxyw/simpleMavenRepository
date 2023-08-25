@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Index of ${path}</title>
+    <base href="${path}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0,
+    user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <style lang="text/css"><!-- 简单的样式 -->
+        ul li {list-style-type:none; margin-top:0.5em;}
+        span.name{display:inline-block; width: 30em;}
+        span.modified{display:inline-block;margin-left:2em;width: 10em;}
+        span.length{display:inline-block;margin-left:2em;width: 10em;}
+        div.run-time{margin-left: 2em;}
+    </style>
+</head>
+<body>
+<h1>Index of ${path}</h1>
+<hr/>
+<ul>
+    <li><span class="name">Name</span><span class="modified">Last Modified</span><span class="length">Size</span></li>
+    <li><span class="name"><a href="../">Parent Directory</a></span></li>
+    ${content}
+</ul>
+<hr/>
+<div class="run-time">running ${time}...</div>
+</body>
+</html>
+

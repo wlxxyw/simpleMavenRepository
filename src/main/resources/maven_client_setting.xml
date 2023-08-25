@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+<!--	<localRepository>${user.home}/.m2/repository</localRepository>-->
+<!--	<interactiveMode>true</interactiveMode>-->
+<!--	<usePluginRegistry>false</usePluginRegistry>-->
+	<offline>false</offline>
+<!--    <pluginGroups></pluginGroups>-->
+<!--    <proxies></proxies>-->
+  <servers>
+        <server>
+            <!-- 设置上传用户 -->
+            <id>id</id>
+            <username>username</username>
+            <password>password</password>
+        </server>
+    </servers>
+  <mirrors>
+	 <mirror>
+		<id>maven-manager</id>
+		<name>maven-manager</name>
+		<mirrorOf>*</mirrorOf>
+		<url>this web site url</url>
+	</mirror>
+  </mirrors>
+ <profiles>
+        <profile>
+            <id>main</id><!-- must same as profiles.activeProfiles.activeProfile value -->
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <jdk>1.8</jdk>
+            </activation>
+            <properties>
+                <maven.compiler.source>1.8</maven.compiler.source>
+                <maven.compiler.target>1.8</maven.compiler.target>
+                <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+            </properties>
+            <repositories>
+                <repository>
+                    <id>maven-manager</id>
+                    <name>local web server</name>
+                    <layout>default</layout>
+                    <url>this web site url with repositoryName</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>fail</checksumPolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>false</enabled>
+                        <updatePolicy>always</updatePolicy>
+                        <checksumPolicy>fail</checksumPolicy>
+                    </snapshots>
+                </repository>
+                <!-- add another repository -->
+<!--                <repository>-->
+<!--                    <id>public</id>-->
+<!--                    <name>main repo</name>-->
+<!--                    <layout>default</layout>-->
+<!--                    <url>http://maven.aliyun.com/nexus/content/repositories/public</url>-->
+<!--                </repository>-->
+            </repositories>
+<!--            <pluginRepositories>-->
+<!--                <pluginRepository>-->
+<!--                    <id>ali_plugin</id>-->
+<!--                    <name>Maven plugin</name>-->
+<!--                    <url>http://maven.aliyun.com/nexus/content/repositories/public</url>-->
+<!--                    <layout>default</layout>-->
+<!--                    <snapshots>-->
+<!--                        <enabled>true</enabled>-->
+<!--                    </snapshots>-->
+<!--                    <releases>-->
+<!--                        <enabled>true</enabled>-->
+<!--                    </releases>-->
+<!--                </pluginRepository>-->
+<!--            </pluginRepositories>-->
+        </profile>
+    </profiles>
+    <activeProfiles>
+        <activeProfile>main</activeProfile>
+    </activeProfiles>
+</settings>
